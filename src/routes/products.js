@@ -31,4 +31,19 @@ router.get('/products/:productId', async function(req, res) {
   }
 })
 
+router.get('/products/:productId/inventory', async function(req, res) {
+  const productId = req.params.productId
+  const query = {
+    name: 'fetch-product-inventory',
+    text: `SELECT inventory FROM products WHERE id=${productId}`
+  }
+
+  try {
+    const dbResponse = await db.query(query)
+    res.json(dbResponse.rows[0])
+  } catch (error) {
+    console.error('oops, db foutje', error)
+  }
+})
+
 module.exports = router
