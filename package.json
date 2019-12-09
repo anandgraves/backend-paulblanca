@@ -6,9 +6,9 @@
   "description": "API server talking to a PostGresQL database",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "dev": "nodemon --exec babel-node index.js",
-    "serve": "node dist/index.js"
+    "build": "babel ./src --out-dir dist",
+    "dev": "nodemon --exec babel-node ./index.js",
+    "serve": "node ./dist/index.js"
   },
   "license": "ISC",
   "dependencies": {

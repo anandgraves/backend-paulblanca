@@ -1,6 +1,5 @@
 import { Pool } from 'pg'
-import { parse } from 'pg-connection-string'
-import { dbOptions } from '../config/dev'
+import { dbOptions } from '../src/config/dev'
 
 const pool = new Pool(dbOptions)
 

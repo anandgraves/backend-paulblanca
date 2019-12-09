@@ -4,7 +4,7 @@ import express from 'express'
 const app = express()
 
 // Require API routes
-const products = require('./routes/products')
+const products = require('./src/routes/products')
 
 // Import API Routes
 app.use(products)
