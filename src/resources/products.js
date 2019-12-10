@@ -2,7 +2,7 @@ import { Router } from 'express'
 import db from '../../db/index'
 const router = Router()
 
-router.get('/products', async function(req, res) {
+router.get('/', async (req, res) => {
   const query = {
     name: 'fetch-products',
     text: 'SELECT * FROM products ORDER BY id LIMIT 20'
@@ -16,7 +16,7 @@ router.get('/products', async function(req, res) {
   }
 })
 
-router.get('/products/:productId', async function(req, res) {
+router.get('/:productId', async (req, res) => {
   const productId = req.params.productId
   const query = {
     name: 'fetch-product',
@@ -31,7 +31,7 @@ router.get('/products/:productId', async function(req, res) {
   }
 })
 
-router.get('/products/:productId/inventory', async function(req, res) {
+router.get('/:productId/inventory', async (req, res) => {
   const productId = req.params.productId
   const query = {
     name: 'fetch-product-inventory',
@@ -46,4 +46,4 @@ router.get('/products/:productId/inventory', async function(req, res) {
   }
 })
 
-module.exports = router
+export default router

@@ -1,16 +1,12 @@
 import express from 'express'
+import productRouter from './src/resources/products'
 
 // Create express instance
 const app = express()
 
-// Require API routes
-const products = require('./src/routes/products')
-
-// Import API Routes
-app.use(products)
-
 app.disable('x-powered-by')
+
+app.use('/api/products', productRouter)
 
 app.listen(7000)
 console.log('App is running on port 7000')
-
